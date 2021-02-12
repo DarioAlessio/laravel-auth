@@ -30,29 +30,30 @@
 
                     <a href="{{ route ('clear-image')}}"><input type="submit" value="CLEAR"></a>
 
-
-
-
                 </div>
 
 
             </div>
         </div>
 
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Profile</div>
+        @if (Auth::user() -> image)
+          <div class="col-md-8">
+              <div class="card">
+                  <div class="card-header">Profile</div>
 
-                <div class="card-body">
-                    <h1>I'M A AVATAR</h1>
+                  <div class="card-body">
+                      <h1>I'M A AVATAR</h1>
 
-                    <img src="{{ asset ('storage/image/' . Auth::user() -> image  )}}" height="200px">
+                      <img src="{{ asset ('storage/image/' . Auth::user() -> image  )}}" height="200px">
 
-                </div>
+                  </div>
 
 
-            </div>
-        </div>
+              </div>
+          </div>
+        @endif
+
+
 
 
     </div>
